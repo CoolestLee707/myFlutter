@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import './button_demo.dart';
 import './floating_action_button_demo.dart';
 import './popup_menu_button_demo.dart';
+import './form_demo.dart';
+import './checkbox_demo.dart';
+import './radio_demo.dart';
+import './switch_demo.dart';
+import './slider_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -14,29 +19,46 @@ class MaterialComponents extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListItem(
-            title: 'ButtonDemo',
+            title: 'ButtonDemo---按钮集合',
             page: ButtonDemo(),
           ),
           ListItem(
-            title: 'FloatingActionButton',
+            title: 'FloatingActionButton---悬浮按钮',
             page: FloatingActionButtonDemo(),
           ),
-
           ListItem(
-            title: 'PopupMenuButton',
+            title: 'PopupMenuButton--点击弹出按钮列表',
             page: PopupMenuButtonDemo(),
           ),
+          ListItem(
+            title: 'FormDemo----表单',
+            page: FormDemo(),
+          ),
+
+          // 创建用户输入相关的小部件的演示页面---复选框
+          ListItem(
+            title: 'CheckboxDemo-复选框/带标签与图标的复选框',
+            page: CheckboxDemo(),
+          ),
+          // 单选按钮
+         ListItem(
+            title: 'RadioDemo--单选按钮',
+            page: RadioDemo(),
+          ),
+
+         ListItem(
+            title: 'SwitchDemo--开关',
+            page: SwitchDemo(),
+          ),
+
+         ListItem(
+            title: 'SliderDemo--滑动选择器',
+            page: SliderDemo(),
+          ),
+
         ],
       ),
     );
-  }
-}
-
-
-class _WidgetDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return PopupMenuButtonDemo();
   }
 }
 
@@ -54,13 +76,42 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(title),
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (BuildContext context) => page,
-          ),
-        );
-      },
+
+      // 1、
+      // onTap: () {
+      //   Navigator.of(context).push(
+      //     MaterialPageRoute(
+      //       builder: (BuildContext context) => page,
+      //     ),
+      //   );
+      // },
+
+      //2
+      onTap: () => Navigator.push(
+          context, MaterialPageRoute(builder: (context) => page)),
     );
   }
 }
+
+
+//模板
+// return Scaffold(
+//       appBar: AppBar(
+//         title: Text("CheckboxDemo"),
+//         elevation: 0.0,
+//       ),
+//       body: Container(
+//         padding: EdgeInsets.all(16.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: <Widget>[
+                
+//               ],
+//             )
+//           ],
+//         ),
+//       ),
+//     );

@@ -7,6 +7,7 @@ import './checkbox_demo.dart';
 import './radio_demo.dart';
 import './switch_demo.dart';
 import './slider_demo.dart';
+import './datetime_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -54,6 +55,11 @@ class MaterialComponents extends StatelessWidget {
          ListItem(
             title: 'SliderDemo--滑动选择器',
             page: SliderDemo(),
+          ),
+
+          ListItem(
+            title: 'DateTimeDemo--显示格式化日期，弹出时间选择器，第三方包使用',
+            page: DateTimeDemo(),
           ),
 
         ],

@@ -8,6 +8,11 @@ import './radio_demo.dart';
 import './switch_demo.dart';
 import './slider_demo.dart';
 import './datetime_demo.dart';
+import './simple_dialog_demo.dart';
+import './alert_dialog_demo.dart';
+import './bottom_sheet_demo.dart';
+import './snack_bar_demo.dart';
+import './expansion_panel_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -42,17 +47,17 @@ class MaterialComponents extends StatelessWidget {
             page: CheckboxDemo(),
           ),
           // 单选按钮
-         ListItem(
+          ListItem(
             title: 'RadioDemo--单选按钮',
             page: RadioDemo(),
           ),
 
-         ListItem(
+          ListItem(
             title: 'SwitchDemo--开关',
             page: SwitchDemo(),
           ),
 
-         ListItem(
+          ListItem(
             title: 'SliderDemo--滑动选择器',
             page: SliderDemo(),
           ),
@@ -62,6 +67,28 @@ class MaterialComponents extends StatelessWidget {
             page: DateTimeDemo(),
           ),
 
+          ListItem(
+            title: 'SimpleDialogDemo--显示对话框',
+            page: SimpleDialogDemo(),
+          ),
+
+          ListItem(
+            title: 'AlertDialogDemo--提示对话框',
+            page: AlertDialogDemo(),
+          ),
+
+          ListItem(
+            title: 'BottomSheetDemo--底部滑动窗口',
+            page: BottomSheetDemo(),
+          ),
+          ListItem(
+            title: 'SnackBarDemo--操作提示栏',
+            page: SnackBarDemo(),
+          ),
+          ListItem(
+            title: 'ExpansionPanelDemo--收缩面板',
+            page: ExpansionPanelDemo(),
+          ),
         ],
       ),
     );
@@ -99,7 +126,6 @@ class ListItem extends StatelessWidget {
   }
 }
 
-
 //模板
 // return Scaffold(
 //       appBar: AppBar(
@@ -114,7 +140,7 @@ class ListItem extends StatelessWidget {
 //             Row(
 //               mainAxisAlignment: MainAxisAlignment.center,
 //               children: <Widget>[
-                
+
 //               ],
 //             )
 //           ],

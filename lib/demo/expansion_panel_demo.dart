@@ -88,7 +88,8 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
                 });
               },
 
-              // 列表通过循环_expansionPanelItems数组来创建
+              // 列表通过循环_expansionPanelItems数组来创建ExpansionPanel数组
+              // 遍历ExpansionPaneItem类型的数组生成ExpansionPanel类型的三个数组
               children: _expansionPanelItems.map(
                 (ExpansionPaneItem item) {
                   return ExpansionPanel(

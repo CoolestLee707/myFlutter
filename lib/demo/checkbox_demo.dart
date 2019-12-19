@@ -20,6 +20,7 @@ class _CheckboxDemoState extends State<CheckboxDemo> {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
+          
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CheckboxListTile(

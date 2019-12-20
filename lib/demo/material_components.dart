@@ -14,6 +14,8 @@ import './bottom_sheet_demo.dart';
 import './snack_bar_demo.dart';
 import './expansion_panel_demo.dart';
 import './chip_demo.dart';
+import './data_table_demo.dart';
+import './paginated_data_table_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -94,6 +96,15 @@ class MaterialComponents extends StatelessWidget {
             title: 'ChipDemo--小碎片',
             page: ChipDemo(),
           ),
+          ListItem(
+            title: 'DataTableDemo--数据表格',
+            page: DataTableDemo(),
+          ),
+          ListItem(
+            title: 'PaginatedDataTableDemo--分页显示表格数据',
+            page: PaginatedDataTableDemo(),
+          ),
+
         ],
       ),
     );

@@ -16,6 +16,7 @@ import './expansion_panel_demo.dart';
 import './chip_demo.dart';
 import './data_table_demo.dart';
 import './paginated_data_table_demo.dart';
+import './card_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -104,7 +105,11 @@ class MaterialComponents extends StatelessWidget {
             title: 'PaginatedDataTableDemo--分页显示表格数据',
             page: PaginatedDataTableDemo(),
           ),
-
+          ListItem(
+            title: 'CardDemo--卡片',
+            page: CardDemo(),
+          ),
+          
         ],
       ),
     );

@@ -17,6 +17,8 @@ import './chip_demo.dart';
 import './data_table_demo.dart';
 import './paginated_data_table_demo.dart';
 import './card_demo.dart';
+import './stepper_demo.dart';
+
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -109,7 +111,11 @@ class MaterialComponents extends StatelessWidget {
             title: 'CardDemo--卡片',
             page: CardDemo(),
           ),
-          
+          ListItem(
+            title: 'StepperDemo--步骤',
+            page: StepperDemo(),
+          ),
+
         ],
       ),
     );

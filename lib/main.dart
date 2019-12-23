@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myflutter/demo/state/state_management_demo.dart';
 import './demo/listview_demo.dart';
 import './demo/hello_demo.dart';
 import './demo/drawer_demo.dart';
@@ -12,13 +13,11 @@ import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
 
-
 void main() => runApp(listApp());
 
 class listApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       // 是否打开性能监控，覆盖在屏幕最上面
       showPerformanceOverlay: false,
@@ -37,37 +36,40 @@ class listApp extends StatelessWidget {
       // home: Home(),//appBar
       // home: SliverDemo(),
 
+      // home: NavigatorDemo(),
+      // routes: {
+      //   '/about':(context) => Page('BT', 'ZBT'),
+      // },
 
-        // home: NavigatorDemo(),
-        // routes: {
-        //   '/about':(context) => Page('BT', 'ZBT'),
-        // },
+      // 带名字的路由,/代表路由的根，默认是 MaterialApp里面home设置的小部件，可以手动设置
+      // initialRoute: '/',//设置路由一开始要显示的（初始路由）
 
-        // 带名字的路由,/代表路由的根，默认是 MaterialApp里面home设置的小部件，可以手动设置
-        // initialRoute: '/',//设置路由一开始要显示的（初始路由）
+      initialRoute: '/state-management', //设置路由一开始要显示的（初始路由）
 
-        initialRoute: '/mdc',//设置路由一开始要显示的（初始路由）
+      routes: {
+        //设置怎么出现的
+        '/': (context) => Home(), //设置路由的根
+        '/about': (context) => Page('BT', 'ZBT'),
+        '/form': (context) => FormDemo(),
+        '/mdc': (context) => MaterialComponents(),
 
-        routes: {//设置怎么出现的
-          '/':(context) => Home(),//设置路由的根
-          '/about':(context) => Page('BT', 'ZBT'),
-          '/form':(context) => FormDemo(),
-          '/mdc':(context) => MaterialComponents(),
+        // 状态管理
+        // '/state-management': (context) => StateManagementDemo(),
+        '/state-management': (context) => ScopedModelDemo(),
 
-        },
+        
+      },
 
-
-        // initialRoute: '/about',//设置路由的根,一开始要显示的
-        // routes: {
-        //   '/':(context) => NavigatorDemo(),//设置路由的根
-        //   '/about':(context) => Page('BT', 'ZBT'),
-        // },
-
+      // initialRoute: '/about',//设置路由的根,一开始要显示的
+      // routes: {
+      //   '/':(context) => NavigatorDemo(),//设置路由的根
+      //   '/about':(context) => Page('BT', 'ZBT'),
+      // },
 
       theme: ThemeData(
         primarySwatch: Colors.yellow, //可以改变导航栏颜色
-        highlightColor: Colors.red,//按钮点击时的颜色
-        splashColor: Colors.yellowAccent,//水波纹的颜色
+        highlightColor: Colors.red, //按钮点击时的颜色
+        splashColor: Colors.yellowAccent, //水波纹的颜色
         accentColor: Colors.blue,
       ),
     );
@@ -75,7 +77,6 @@ class listApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -93,7 +94,8 @@ class Home extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.search),
               tooltip: 'Search',
-              onPressed: () => debugPrint('Search button is pressed'),
+              // onPressed: () => debugPrint('Search button is pressed'),
+              onPressed: () => Navigator.pushNamed(context, '/mdc'),
             )
           ],
           elevation: 0.0,

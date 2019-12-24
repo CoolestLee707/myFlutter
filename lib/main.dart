@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myflutter/demo/state/state_management_demo.dart';
+import 'package:myflutter/demo/stream/stream_demo.dart';
+import 'package:myflutter/demo/stream/stream_controller_demo.dart';
 import './demo/listview_demo.dart';
 import './demo/hello_demo.dart';
 import './demo/drawer_demo.dart';
@@ -44,7 +46,7 @@ class listApp extends StatelessWidget {
       // 带名字的路由,/代表路由的根，默认是 MaterialApp里面home设置的小部件，可以手动设置
       // initialRoute: '/',//设置路由一开始要显示的（初始路由）
 
-      initialRoute: '/state-management', //设置路由一开始要显示的（初始路由）
+      initialRoute: '/stream', //设置路由一开始要显示的（初始路由）
 
       routes: {
         //设置怎么出现的
@@ -58,6 +60,9 @@ class listApp extends StatelessWidget {
         '/state-management': (context) => ScopedModelDemo(),
 
         
+        // '/stream': (context) => StreamDemo(),
+        '/stream': (context) => StreamControllerDemo(),
+
       },
 
       // initialRoute: '/about',//设置路由的根,一开始要显示的

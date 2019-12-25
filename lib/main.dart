@@ -56,12 +56,12 @@ class listApp extends StatelessWidget {
         '/mdc': (context) => MaterialComponents(),
 
         // 状态管理
-        // '/state-management': (context) => StateManagementDemo(),
-        '/state-management': (context) => ScopedModelDemo(),
+        '/state-management': (context) => StateManagementDemo(),
+        '/state-scopedModel': (context) => ScopedModelDemo(),
 
         
-        // '/stream': (context) => StreamDemo(),
-        '/stream': (context) => StreamControllerDemo(),
+        '/stream': (context) => StreamDemo(),
+        '/streamController': (context) => StreamControllerDemo(),
 
       },
 
@@ -85,7 +85,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
@@ -122,6 +122,9 @@ class Home extends StatelessWidget {
               Tab(
                 icon: Icon(Icons.view_quilt),
               ),
+              Tab(
+                icon: Icon(Icons.view_column),
+              ),
             ],
           ),
         ),
@@ -130,7 +133,7 @@ class Home extends StatelessWidget {
             listViewDemo(),
             BasicDemo(),
             LayoutDemo(),
-            // ViewDemo(),
+            ViewDemo(),
             SliverDemo(),
           ],
         ),

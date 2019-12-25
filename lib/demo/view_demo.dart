@@ -6,22 +6,22 @@ class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-        // 类似ScrollView
+        //1.类似ScrollView
     // return PageViewDemo();
 
     // 有数据的
-    // return PageViewBuilderDemo();
+    return PageViewBuilderDemo();
 
 
       // 类似collectionview
       // return GridViewCountDemo();
 
 
-      // return GridViewExtentDemo();
+      // return GridViewExtentDemo(); 
 
 
       // 带index索引的
-      return GridViewBuilderDemo();
+      // return GridViewBuilderDemo();
 
   }
 }
@@ -38,6 +38,7 @@ class GridViewBuilderDemo extends StatelessWidget {
         ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -47,7 +48,7 @@ class GridViewBuilderDemo extends StatelessWidget {
 
       // 设置数量，item的边长自适应
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 5,//每行数量
+        crossAxisCount: 3,//每行数量
         crossAxisSpacing: 8.0,//交叉轴间距
         mainAxisSpacing: 8.0,//主轴方向间距
       ),
@@ -150,9 +151,7 @@ class PageViewBuilderDemo extends StatelessWidget {
 }
 
 
-
-
-//PageView，类似UIScrollView
+//1.PageView，类似UIScrollView
 class PageViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

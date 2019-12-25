@@ -19,20 +19,21 @@ class LayoutDemo extends StatelessWidget {
           // IconBadge(Icons.backup,color: Colors.black,),
           // IconBadge(Icons.update,size:50.0,color: Colors.red,),
           // IconBadge(Icons.chat,color: Colors.red,),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: 200.0,
-              maxHeight: 250.0,
-              minWidth: 100.0,
-              maxWidth: 150.0,
-            ),
-            child: Container(
-              color: Colors.yellow,
-            ),
-          ),
+
+          // ConstrainedBox(
+          //   constraints: BoxConstraints(
+          //     minHeight: 200.0,
+          //     maxHeight: 250.0,
+          //     minWidth: 100.0,
+          //     maxWidth: 150.0,
+          //   ),
+          //   child: Container(
+          //     color: Colors.yellow,
+          //   ),
+          // ),
 
           // 一摞小部件
-        // StackDemo(),
+        StackDemo(),
 
           // 宽高比
         //  AspectRatioDemo(),
@@ -62,7 +63,7 @@ class StackDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Stack(
-            alignment: Alignment.bottomLeft,//Stack设置就会以第一个为低重叠，并以第一个为容器去对齐
+            alignment: Alignment.bottomLeft,//Stack设置就会以第一个为底重叠，并以第一个为容器去对齐
             children: <Widget>[
               SizedBox(
                 //Creates a fixed size box
@@ -78,7 +79,7 @@ class StackDemo extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.filter,
-                    color: Colors.white,
+                    color: Colors.purple,
                     size: 40.0,
                   ),
                 ),

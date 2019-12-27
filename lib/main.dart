@@ -48,13 +48,15 @@ class listApp extends StatelessWidget {
       // },
 
       // 带名字的路由,/代表路由的根，默认是 MaterialApp里面home设置的小部件，可以手动设置
-      initialRoute: '/',//设置路由一开始要显示的（初始路由）
+      initialRoute: '/', //设置路由一开始要显示的（初始路由）
 
       // initialRoute: '/animation', //设置路由一开始要显示的（初始路由）
 
       routes: {
         //设置怎么出现的
-        '/': (context) => Home(), //设置路由的根
+        '/': (context) => HomeDemo(), //设置路由的根
+        // '/': (context) => Home(), //设置路由的根
+
         '/about': (context) => Page('BT', 'ZBT'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
@@ -63,11 +65,9 @@ class listApp extends StatelessWidget {
         '/state-management': (context) => StateManagementDemo(),
         '/state-scopedModel': (context) => ScopedModelDemo(),
 
-        
         '/stream': (context) => StreamDemo(),
         '/streamController': (context) => StreamControllerDemo(),
 
-        
         // '/rxdart': (context) => RxDartDemo(),
 
         '/bloc': (context) => BlocDemo(),
@@ -75,7 +75,6 @@ class listApp extends StatelessWidget {
         '/http': (context) => HttpDemo(),
 
         '/animation': (context) => AnimationDemo(),
-
       },
 
       // initialRoute: '/about',//设置路由的根,一开始要显示的
@@ -93,6 +92,8 @@ class listApp extends StatelessWidget {
     );
   }
 }
+
+
 
 class Home extends StatelessWidget {
   @override
@@ -150,6 +151,7 @@ class Home extends StatelessWidget {
             SliverDemo(),
           ],
         ),
+
         // drawer: Text('this is a drawer'),//左边边界右滑
         // endDrawer: Text('right drawer'),//右边左滑
         drawer: drawerDemo(),

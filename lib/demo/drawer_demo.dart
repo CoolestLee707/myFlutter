@@ -87,6 +87,24 @@ class drawerDemo extends StatelessWidget {
                   Navigator.pushNamed(context, '/streamController');
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.query_builder),
+                title: Text('bloc',textAlign: TextAlign.center,),
+                trailing: Icon(Icons.query_builder,color: Colors.green,size: 30.0,),
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/bloc');
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.warning),
+                title: Text('http',textAlign: TextAlign.center,),
+                trailing: Icon(Icons.warning,color: Colors.lightBlue,size: 30.0,),
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/http');
+                },
+              ),
             ],
           ),
         );

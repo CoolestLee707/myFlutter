@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myflutter/demo/bloc/bloc_demo.dart';
+import 'package:myflutter/demo/http/http_demo.dart';
 import 'package:myflutter/demo/rxdart/rxdart_demo.dart';
 import 'package:myflutter/demo/state/state_management_demo.dart';
 import 'package:myflutter/demo/stream/stream_demo.dart';
@@ -48,7 +49,7 @@ class listApp extends StatelessWidget {
       // 带名字的路由,/代表路由的根，默认是 MaterialApp里面home设置的小部件，可以手动设置
       // initialRoute: '/',//设置路由一开始要显示的（初始路由）
 
-      initialRoute: '/bloc', //设置路由一开始要显示的（初始路由）
+      initialRoute: '/http', //设置路由一开始要显示的（初始路由）
 
       routes: {
         //设置怎么出现的
@@ -66,10 +67,11 @@ class listApp extends StatelessWidget {
         '/streamController': (context) => StreamControllerDemo(),
 
         
-        '/rxdart': (context) => RxDartDemo(),
+        // '/rxdart': (context) => RxDartDemo(),
 
         '/bloc': (context) => BlocDemo(),
 
+        '/http': (context) => HttpsDemo(),
 
       },
 

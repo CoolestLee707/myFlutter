@@ -105,6 +105,15 @@ class drawerDemo extends StatelessWidget {
                   Navigator.pushNamed(context, '/http');
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.favorite),
+                title: Text('animation',textAlign: TextAlign.center,),
+                trailing: Icon(Icons.favorite,color: Colors.red,size: 30.0,),
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/animation');
+                },
+              ),
             ],
           ),
         );

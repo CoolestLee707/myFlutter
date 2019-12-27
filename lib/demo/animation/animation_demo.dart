@@ -20,6 +20,7 @@ class AnimationDemoHome extends StatefulWidget {
 
 class _AnimationDemoHomeState extends State<AnimationDemoHome>
     with TickerProviderStateMixin {
+      
   AnimationController animationDemoController;
 
 // 设置动画范围

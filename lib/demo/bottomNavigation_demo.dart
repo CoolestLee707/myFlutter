@@ -75,7 +75,7 @@ class _HomeDemoState extends State<HomeDemo> {
       ..add(OneWidgetDemo())
       ..add(MaterialComponents())
       ..add(ThreeWidgetDemo())
-      ..add(FourWidgetDemo());
+      ..add(SliverDemo());
     super.initState();
   }
 

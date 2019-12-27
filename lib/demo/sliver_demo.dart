@@ -11,10 +11,10 @@ class SliverDemo extends StatelessWidget {
           
           //设置标题栏（类似导航栏）
           SliverAppBar(
-            // title: Text(
-            //   'flutterdemo'
-            // ),
-            // pinned: true,//固定标题栏
+            title: Text(
+              'flutterdemo'
+            ),
+            pinned: true,//固定标题栏
             floating: true,//导航栏上滑消失，下拉马上出现
 
             expandedHeight: 178.0,//下拉伸缩空间

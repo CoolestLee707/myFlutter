@@ -11,19 +11,19 @@ class SliverDemo extends StatelessWidget {
           
           //设置标题栏（类似导航栏）
           SliverAppBar(
-            title: Text(
-              'flutterdemo'
-            ),
+            // title: Text(
+            //   'flutterdemo'
+            // ),
             pinned: true,//固定标题栏
             floating: true,//导航栏上滑消失，下拉马上出现
 
-            expandedHeight: 178.0,//下拉伸缩空间
+            expandedHeight: 300.0,//下拉伸缩空间
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 'I Like Flutter',
                 style : TextStyle(
                   fontSize: 30.0,
-                  color: Colors.yellow,
+                  color: Colors.red,
                   letterSpacing: 5.0,//字间距
                 )
               ),
@@ -35,7 +35,8 @@ class SliverDemo extends StatelessWidget {
 
           ),
 
-          // SliverGridDemo(),
+          SliverGridDemo(),
+          // SliverListDemo(),
 
           // SliverPadding(//内边距
           //   padding: EdgeInsets.all(10.0),
@@ -47,14 +48,14 @@ class SliverDemo extends StatelessWidget {
           //   sliver: SliverGridDemo(),
           // ),
 
-          SliverSafeArea(
-            // 设置安全区域+内边距
-            sliver: SliverPadding(
-              padding: EdgeInsets.all(10.0),
-              sliver: SliverGridDemo(),
-              // sliver: SliverListDemo(),
-            ),
-          ),
+          // SliverSafeArea(
+          //   // 设置安全区域+内边距
+          //   sliver: SliverPadding(
+          //     padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+          //     sliver: SliverGridDemo(),
+          //     // sliver: SliverListDemo(),
+          //   ),
+          // ),
 
 
         ],
@@ -71,7 +72,7 @@ class SliverGridDemo extends StatelessWidget {
         crossAxisCount: 2, //交叉轴item数量
         crossAxisSpacing: 8.0, //交叉轴item间隔
         mainAxisSpacing: 8.0, //主轴item间隔
-        childAspectRatio: 0.5, //每个item的宽高比（交叉轴方向长/主轴方向的长）
+        childAspectRatio: 1.0, //每个item的宽高比（交叉轴方向长/主轴方向的长）
       ),
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
@@ -96,9 +97,9 @@ class SliverListDemo extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           return Padding(
-            padding: EdgeInsets.only(bottom: 32.0),
+            padding: EdgeInsets.only(bottom: 15.0),
             child: ClipRRect(//裁剪出圆角
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(15.0),
               // elevation: 14.0,
               // shadowColor: Colors.grey.withOpacity(0.5),
 

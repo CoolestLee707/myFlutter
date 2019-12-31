@@ -83,6 +83,7 @@ class listApp extends StatelessWidget {
       //   '/about':(context) => Page('BT', 'ZBT'),
       // },
 
+          // theme: ThemeData.light(),
       theme: ThemeData(
         primarySwatch: Colors.yellow, //可以改变导航栏颜色
         highlightColor: Colors.red, //按钮点击时的颜色

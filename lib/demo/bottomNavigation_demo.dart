@@ -8,6 +8,8 @@ import 'material_components.dart';
 import 'sliver_demo.dart';
 import 'view_demo.dart';
 
+import '../model/post.dart';
+
 class BottomNavigationBarDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -70,7 +72,7 @@ class _HomeDemoState extends State<HomeDemo> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    // ..谁用完这个方法还返回谁，就可以继续使用
     list
       ..add(OneWidgetDemo())
       ..add(MaterialComponents())
@@ -203,8 +205,10 @@ class ThreeWidgetDemo extends StatelessWidget {
         title: Text('ThreeWidgetDemo'),
         elevation: 0.0,
       ),
-      body: Center(
-        child: Text('3'),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverListDemo(),
+        ],
       ),
     );
   }

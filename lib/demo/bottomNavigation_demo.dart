@@ -202,7 +202,7 @@ class ThreeWidgetDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ThreeWidgetDemo'),
+        title: Text('ThreeWidgetDemos'),
         elevation: 0.0,
       ),
       body: CustomScrollView(

@@ -33,26 +33,33 @@ class LayoutDemo extends StatelessWidget {
           // ),
 
           // 一摞小部件
-        StackDemo(),
+          StackDemo(),
 
           // 宽高比
-        //  AspectRatioDemo(),
-
+          AspectRatioDemo(),
         ],
       ),
     );
   }
 }
 
-
 class AspectRatioDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return  AspectRatio(
-      aspectRatio: 3.0/3.0,
-      child: Container(
-        color: Colors.red,
+    return GestureDetector(
+      onTap: () {
+        print('fdsfdsfds');
+      },
+      child: SizedBox(
+        width: 100.0,
+        height: 100.0,
+        child: AspectRatio(
+          aspectRatio: 3.0 / 1.5,
+          child: Container(
+            color: Colors.red,
+          ),
+        ),
       ),
     );
   }
@@ -63,60 +70,61 @@ class StackDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Stack(
-            alignment: Alignment.bottomLeft,//Stack设置就会以第一个为底重叠，并以第一个为容器去对齐
-            children: <Widget>[
-              SizedBox(
-                //Creates a fixed size box
-                width: 200.0,
-                height: 300.0,
-                // child: Icon(Icons.filter,color: Colors.green,size: 40.0,),
-                child: Container(
-                  // alignment: Alignment(-1.0, -1.0),
-                  alignment: Alignment.topLeft,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.circular(7.0),
-                  ),
-                  child: Icon(
-                    Icons.filter,
-                    color: Colors.purple,
-                    size: 40.0,
-                  ),
-                ),
+      alignment: Alignment.bottomLeft, //Stack设置就会以第一个为底重叠，并以第一个为容器去对齐
+      children: <Widget>[
+        SizedBox(
+          //Creates a fixed size box
+          width: 200.0,
+          height: 300.0,
+          // child: Icon(Icons.filter,color: Colors.green,size: 40.0,),
+          child: Container(
+            // alignment: Alignment(-1.0, -1.0),
+            alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(7.0),
+            ),
+            child: Icon(
+              Icons.filter,
+              color: Colors.purple,
+              size: 40.0,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 30.0,
+          height: 20.0,
+        ),
+        SizedBox(
+          //Creates a fixed size box
+          width: 80.0,
+          height: 80.0,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.green,
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [
+                  Colors.red,
+                  Colors.black,
+                ],
               ),
-              SizedBox(
-                width: 30.0,
-                height: 20.0,
-              ),
-              SizedBox(
-                //Creates a fixed size box
-                width: 80.0,
-                height: 80.0,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    shape: BoxShape.circle,
-                    gradient: RadialGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.black,
-                      ],
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.tab,
-                    color: Colors.white,
-                    size: 40.0,
-                  ),
-                ),
-              ),
-              Positioned(//相对于最大的控件的位置
-                right: 20.0,
-                top: 30.0,
-                child: Icon(Icons.access_time,color:Colors.deepPurple,size:22.0),
-              )
-            ],
-          );
+            ),
+            child: Icon(
+              Icons.tab,
+              color: Colors.white,
+              size: 40.0,
+            ),
+          ),
+        ),
+        Positioned(
+          //相对于最大的控件的位置
+          right: 20.0,
+          top: 30.0,
+          child: Icon(Icons.access_time, color: Colors.deepPurple, size: 22.0),
+        )
+      ],
+    );
   }
 }
 

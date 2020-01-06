@@ -24,7 +24,7 @@ class PostShow extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(32.0),
               color: Colors.red[50],
-              width: double.infinity,//容器占满所有宽度
+              width: double.infinity,//容器占满所有宽度，无穷大
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

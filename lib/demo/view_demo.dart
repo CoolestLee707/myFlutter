@@ -10,7 +10,7 @@ class ViewDemo extends StatelessWidget {
     // return PageViewDemo();
 
     // 有数据的
-    return PageViewBuilderDemo();
+    // return PageViewBuilderDemo();
 
 
       // 类似collectionview
@@ -21,7 +21,7 @@ class ViewDemo extends StatelessWidget {
 
 
       // 带index索引的
-      // return GridViewBuilderDemo();
+      return GridViewBuilderDemo();
 
   }
 }

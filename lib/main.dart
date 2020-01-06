@@ -156,7 +156,7 @@ class Home extends StatelessWidget {
         // drawer: Text('this is a drawer'),//左边边界右滑
         // endDrawer: Text('right drawer'),//右边左滑
         drawer: drawerDemo(),
-        bottomNavigationBar: BottomNavigationBarDemo(),
+        // bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }

@@ -10,6 +10,8 @@ class BasicDemo extends StatelessWidget {
     return Container(
       // color: Colors.yellow,
       decoration: BoxDecoration(//设置背景图片
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(50.0),
         image: DecorationImage(
           // image: AssetImage(assetName),//项目里图片
           image: NetworkImage('http://pic.90sjimg.com/back_pic/qk/back_origin_pic/00/02/28/8b36588d8d1651bbcc9d68d3f6a6eb84.jpg'),//网络图片

@@ -57,7 +57,7 @@ class listApp extends StatelessWidget {
         '/': (context) => HomeDemo(), //设置路由的根
         // '/': (context) => Home(), //设置路由的根
 
-        '/about': (context) => Page('BT', 'ZBT'),
+        // '/about': (context) => Page('BT', 'ZBT'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
 
@@ -83,7 +83,7 @@ class listApp extends StatelessWidget {
       //   '/about':(context) => Page('BT', 'ZBT'),
       // },
 
-          // theme: ThemeData.light(),
+      // theme: ThemeData.light(),
       theme: ThemeData(
         primarySwatch: Colors.yellow, //可以改变导航栏颜色
         highlightColor: Colors.red, //按钮点击时的颜色
@@ -93,8 +93,6 @@ class listApp extends StatelessWidget {
     );
   }
 }
-
-
 
 class Home extends StatelessWidget {
   @override

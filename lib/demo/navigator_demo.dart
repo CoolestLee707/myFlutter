@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class NavigatorDemo extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +18,7 @@ class NavigatorDemo extends StatelessWidget {
               // onPressed: () {
               //   Navigator.of(context).push(
               //     MaterialPageRoute(
-                      
+
               //       // builder: (BuildContext context) => Page('anout','852','d'),
               //       // builder: (BuildContext context) => Page(title: 'About',subTitle: '132',auther: 'leeitgg',),
               //       //  builder: (BuildContext context) => Page('标题', 'fubiaoti',auther: '1889779',),
@@ -29,7 +28,7 @@ class NavigatorDemo extends StatelessWidget {
               //   );
               // },
               // 打开指定名字的路由
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/about');
               },
             ),
@@ -40,27 +39,26 @@ class NavigatorDemo extends StatelessWidget {
   }
 }
 
-
 class Page extends StatelessWidget {
   final String title;
   final String subTitle;
   final String auther;
 
-      // Page(
-      //   this.title,
-      //   this.subTitle,
-      //   this.auther,
-      // );
+  // Page(
+  //   this.title,
+  //   this.subTitle,
+  //   this.auther,
+  // );
   // Page({
   //   this.title,
   //   this.subTitle,
   //   this.auther = 'leenn',
   // });
 
- Page(
-   this.title,
-   this.subTitle,{
-   this.auther = 'lee1',
+  Page(
+    this.title,
+    this.subTitle, {
+    this.auther = 'lee1',
   });
 
   @override
@@ -68,14 +66,14 @@ class Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // title: Text(title),
-          title: Text(title + ' ' + subTitle + ' ' + auther),
+        title: Text(title + ' ' + subTitle + ' ' + auther),
         elevation: 0.0,
         backgroundColor: Colors.red,
       ),
       // 页面右下角加一个返回的按钮
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.arrow_back),
-        onPressed: (){
+        onPressed: () {
           Navigator.pop(context);
         },
       ),

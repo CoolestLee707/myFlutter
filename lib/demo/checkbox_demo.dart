@@ -7,9 +7,8 @@ class CheckboxDemo extends StatefulWidget {
 }
 
 class _CheckboxDemoState extends State<CheckboxDemo> {
-
   bool _checkboxItemA = true;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +19,6 @@ class _CheckboxDemoState extends State<CheckboxDemo> {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: Column(
-          
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CheckboxListTile(
@@ -33,12 +31,11 @@ class _CheckboxDemoState extends State<CheckboxDemo> {
               title: Text('Checkbox Item A'),
               subtitle: Text('Description'),
               secondary: Icon(Icons.bookmark),
-              selected: _checkboxItemA,//设置图标文字是否是激活/置灰状态
+              selected: _checkboxItemA, //设置图标文字是否是激活/置灰状态
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-
                 // Checkbox(
                 //   value: _checkboxItemA,//是否选中
 
@@ -61,4 +58,3 @@ class _CheckboxDemoState extends State<CheckboxDemo> {
     );
   }
 }
-

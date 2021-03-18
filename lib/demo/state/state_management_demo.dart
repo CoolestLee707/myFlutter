@@ -22,7 +22,6 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
 
   @override
   Widget build(BuildContext context) {
-
 // 1、dependOnInheritedWidgetOfExactType
 
     return CounterProvider(
@@ -49,7 +48,6 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
 
 // 中间加了一层响应，需要把参数和时间都传递过去
 class CounterWrapper extends StatelessWidget {
-
   // final int count; //父辈传来的值
   // final VoidCallback increaseCount; //给父辈的回调
 
@@ -59,8 +57,7 @@ class CounterWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       // child: Counter(count, increaseCount),
-         child: Counter(),
-
+      child: Counter(),
     );
   }
 }
@@ -75,9 +72,9 @@ class Counter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final int count = CounterProvider.of(context).count;
-    final VoidCallback increaseCount = CounterProvider.of(context).increaseCount;
+    final VoidCallback increaseCount =
+        CounterProvider.of(context).increaseCount;
 
     return ActionChip(
       label: Text('$count'),
@@ -110,7 +107,6 @@ class CounterProvider extends InheritedWidget {
   }
 }
 
-
 // ----------------------------------------------------------------------------------------
 // 2、使用 ScopedModel （三方库）传递数据
 
@@ -120,10 +116,9 @@ class CounterModel extends Model {
   int get count => _count;
 
   void increaseCount() {
-    _count ++;
-    notifyListeners();//监听的小部件会重建
+    _count++;
+    notifyListeners(); //监听的小部件会重建
   }
-
 }
 
 class ScopedModelDemo extends StatelessWidget {
@@ -137,30 +132,28 @@ class ScopedModelDemo extends StatelessWidget {
           title: Text('ScopedModelDemo'),
           elevation: 0.0,
         ),
-     
+
         body: ScopedModelCounterWrapper(),
 
 // 监听floatingActionButton的变化，可设置是否监听rebuildOnChange
         floatingActionButton: ScopedModelDescendant<CounterModel>(
           rebuildOnChange: true,
-          builder: (BuildContext context, Widget child, CounterModel model) => FloatingActionButton(
+          builder: (BuildContext context, Widget child, CounterModel model) =>
+              FloatingActionButton(
             child: Icon(Icons.add),
             onPressed: model.increaseCount,
-            ),
+          ),
         ),
-
-     ),
+      ),
     );
   }
 }
 
-
 class ScopedModelCounterWrapper extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Center(
-         child: ScopedModelCounter(),
+      child: ScopedModelCounter(),
     );
   }
 }
@@ -170,9 +163,9 @@ class ScopedModelCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopedModelDescendant<CounterModel>(
       builder: (context, _, model) => ActionChip(
-      label: Text('${model.count}'),
-      onPressed: model.increaseCount,
-     ),
+        label: Text('${model.count}'),
+        onPressed: model.increaseCount,
+      ),
     );
   }
 }

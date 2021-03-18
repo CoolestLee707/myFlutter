@@ -6,7 +6,6 @@ class StepperDemo extends StatefulWidget {
 }
 
 class _StepperDemoState extends State<StepperDemo> {
-
   int _currentStep = 0;
 
   @override
@@ -26,7 +25,7 @@ class _StepperDemoState extends State<StepperDemo> {
                 primaryColor: Colors.black,
               ),
               child: Stepper(
-                currentStep: _currentStep,//设置当前步骤
+                currentStep: _currentStep, //设置当前步骤
 
                 //点击序号索引值会执行的方法，让他激活当前的step
                 onStepTapped: (int value) {
@@ -38,13 +37,13 @@ class _StepperDemoState extends State<StepperDemo> {
                 // 点击继续按钮
                 onStepContinue: () {
                   setState(() {
-                    _currentStep <= 2 ? _currentStep += 1: _currentStep = 0;
+                    _currentStep <= 2 ? _currentStep += 1 : _currentStep = 0;
                   });
                 },
                 //点击取消按钮
                 onStepCancel: () {
-                   setState(() {
-                    _currentStep > 0 ? _currentStep -= 1: _currentStep = 0;
+                  setState(() {
+                    _currentStep > 0 ? _currentStep -= 1 : _currentStep = 0;
                   });
                 },
                 steps: [

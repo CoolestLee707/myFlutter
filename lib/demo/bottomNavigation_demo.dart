@@ -19,43 +19,42 @@ class BottomNavigationBarDemo extends StatefulWidget {
 }
 
 class _BottomNavigationDemoState extends State<BottomNavigationBarDemo> {
-  
-   int _currentIndex = 0;
+  int _currentIndex = 0;
 
-   void _onTapHandler (int index) {
-     setState(() {//刷新状态
-        _currentIndex = index;
-     });
+  void _onTapHandler(int index) {
+    setState(() {
+      //刷新状态
+      _currentIndex = index;
+    });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          fixedColor: Colors.black,//激活状态下的颜色
-          currentIndex: _currentIndex,
-          onTap: _onTapHandler,//点击会调用这个方法去重新渲染
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
-              title: Text('Explore'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.history),
-              title: Text('History'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              title: Text('List'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.filter),
-              title: Text('Filter'),
-            ),
-          ],
-          
-        );
+      type: BottomNavigationBarType.fixed,
+      fixedColor: Colors.black, //激活状态下的颜色
+      currentIndex: _currentIndex,
+      onTap: _onTapHandler, //点击会调用这个方法去重新渲染
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.explore),
+          title: Text('Explore'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.history),
+          title: Text('History'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.list),
+          title: Text('List'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.filter),
+          title: Text('Filter'),
+        ),
+      ],
+    );
   }
 }
 
@@ -66,7 +65,6 @@ class HomeDemo extends StatefulWidget {
 }
 
 class _HomeDemoState extends State<HomeDemo> {
-
   List<Widget> list = List();
   int _currentIndex = 0;
 
@@ -91,7 +89,6 @@ class _HomeDemoState extends State<HomeDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -100,27 +97,26 @@ class _HomeDemoState extends State<HomeDemo> {
         onTap: _onTapHandler,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
-              title: Text('Explore'),
-            ),
+            icon: Icon(Icons.explore),
+            title: Text('Explore'),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.history),
-              title: Text('History'),
-            ),
+            icon: Icon(Icons.history),
+            title: Text('History'),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              title: Text('List'),
-            ),
+            icon: Icon(Icons.list),
+            title: Text('List'),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.filter),
-              title: Text('Filter'),
-            ),
+            icon: Icon(Icons.filter),
+            title: Text('Filter'),
+          ),
         ],
       ),
     );
   }
 }
-
 
 class OneWidgetDemo extends StatelessWidget {
   @override

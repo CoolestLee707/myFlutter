@@ -20,7 +20,6 @@ class StreamDemoHome extends StatefulWidget {
 }
 
 class _StreamDemoHomeState extends State<StreamDemoHome> {
-
   StreamSubscription _streamDemoSubscription;
 
   @override
@@ -33,7 +32,6 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
 
     // 用fetchData方法初始化一个stream,直接就执行fetchData方法的
     Stream<String> _streamDemo = Stream.fromFuture(fetchData());
-
 
     print('start listing');
 
@@ -88,7 +86,6 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     print('Cancel subscription');
     _streamDemoSubscription.cancel();
   }
-
 
   @override
   Widget build(BuildContext context) {

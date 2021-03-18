@@ -7,7 +7,6 @@ class PopupMenuButtonDemo extends StatefulWidget {
 }
 
 class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
-
   String _currentMenuItem = 'Home';
   @override
   Widget build(BuildContext context) {
@@ -24,16 +23,13 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-
                 //显示选中的菜单文字
                 Text(_currentMenuItem),
-                
+
                 //弹出选择按钮列表
                 PopupMenuButton(
-
                   //点击选择的回调方法
                   onSelected: (value) {
-
                     print(value);
 
                     //刷新状态
@@ -41,7 +37,7 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
                       _currentMenuItem = value;
                     });
                   },
-  
+
                   itemBuilder: (BuildContext context) => [
                     PopupMenuItem(
                       value: 'Home',

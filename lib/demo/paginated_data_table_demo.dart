@@ -30,30 +30,25 @@ class PostDataSource extends DataTableSource {
     );
   }
 
-
 // 定义_sort方法，getField(post)是对应的第一个参数
   void _sort(getField(post), bool asceding) {
-
-    _posts.sort((a, b){
+    _posts.sort((a, b) {
       if (!asceding) {
         final c = a;
         a = b;
         b = c;
       }
-      
+
       // 用一下传递的方法获取一下长度
       final aValue = getField(a);
       final bValue = getField(b);
 
       return Comparable.compare(aValue, bValue);
-        // 或
-     // return Comparable.compare(a.title.length, b.title.length);
-
-
+      // 或
+      // return Comparable.compare(a.title.length, b.title.length);
     });
 
     notifyListeners();
-
   }
 }
 
@@ -81,7 +76,7 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
           children: <Widget>[
             PaginatedDataTable(
               header: Text('Posts'),
-              rowsPerPage: 5,//控制每页显示的数量，默认每页显示10个
+              rowsPerPage: 5, //控制每页显示的数量，默认每页显示10个
               source: _postDataSource,
               sortColumnIndex: _sortColumnIndex,
               sortAscending: _sortAscending,
@@ -96,8 +91,8 @@ class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
                       // _sort有两个参数，一个参数是方法(post) => post.title.length，
                       // 这个方法就是传一个model，会返回这个model的title的长度
                       // 第二个参数是ascending，是否使用升序排列
-                      _postDataSource._sort((post) => post.title.length, ascending);
-
+                      _postDataSource._sort(
+                          (post) => post.title.length, ascending);
                     });
                   },
                 ),

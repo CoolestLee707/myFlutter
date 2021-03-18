@@ -19,7 +19,6 @@ import './paginated_data_table_demo.dart';
 import './card_demo.dart';
 import './stepper_demo.dart';
 
-
 class MaterialComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -115,7 +114,6 @@ class MaterialComponents extends StatelessWidget {
             title: 'StepperDemo--步骤',
             page: StepperDemo(),
           ),
-
         ],
       ),
     );

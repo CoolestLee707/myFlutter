@@ -17,19 +17,22 @@ class _CardDemoState extends State<CardDemo> {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: ListView(
-          children: posts.map((post){
+          children: posts.map((post) {
             return Card(
               child: Column(
                 children: <Widget>[
                   AspectRatio(
-                    aspectRatio: 16/9,
+                    aspectRatio: 16 / 9,
                     // ClipRRect给他的孩子裁剪圆角
                     child: ClipRRect(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(4.0),
                         topRight: Radius.circular(4.0),
                       ),
-                      child: Image.network(post.imageUrl,fit: BoxFit.cover,),
+                      child: Image.network(
+                        post.imageUrl,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   ListTile(
@@ -41,30 +44,39 @@ class _CardDemoState extends State<CardDemo> {
                   ),
                   Container(
                     padding: EdgeInsets.all(16.0),
-                    child: Text(post.description, maxLines: 3, overflow: TextOverflow.ellipsis,),
+                    child: Text(
+                      post.description,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   ButtonTheme.bar(
                     child: ButtonBar(
                       children: <Widget>[
                         FlatButton(
-                          child: Text('Like'.toUpperCase(),style: TextStyle(color: Colors.red),),
-                          onPressed: () {
-                          },
+                          child: Text(
+                            'Like'.toUpperCase(),
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          onPressed: () {},
                         ),
                         FlatButton(
-                          child: Text('read'.toUpperCase(),style: TextStyle(color: Colors.blue),),
-                          onPressed: () {
-                          },
+                          child: Text(
+                            'read'.toUpperCase(),
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                          onPressed: () {},
                         ),
                         FlatButton(
-                          child: Text('Like'.toUpperCase(),style: TextStyle(color: Colors.green),),
-                          onPressed: () {
-                          },
+                          child: Text(
+                            'Like'.toUpperCase(),
+                            style: TextStyle(color: Colors.green),
+                          ),
+                          onPressed: () {},
                         ),
                       ],
                     ),
                   ),
-
                 ],
               ),
             );

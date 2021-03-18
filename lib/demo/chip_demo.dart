@@ -113,14 +113,14 @@ class _ChipDemoState extends State<ChipDemo> {
                   width: double.infinity,
                   child: Text('ActionChip: $_action'),
                 ),
-              //  ActionChip ----- 动作碎片
+                //  ActionChip ----- 动作碎片
                 Wrap(
                   spacing: 8.0,
                   // _tags迭代处理数组中的元素，map()里放方法
                   children: _tags.map((tag) {
                     return ActionChip(
                       label: Text(tag),
-                      onPressed: (){
+                      onPressed: () {
                         debugPrint(tag);
                         setState(() {
                           _action = tag;
@@ -130,7 +130,6 @@ class _ChipDemoState extends State<ChipDemo> {
                   }).toList(),
                 ),
 
-
                 Divider(
                   height: 25.0, //占的地高度，并不是线变宽
                   color: Colors.red,
@@ -139,9 +138,10 @@ class _ChipDemoState extends State<ChipDemo> {
 
                 Container(
                   width: double.infinity,
-                  child: Text('FilterChip: ${_selected.toString()}'),//将_selected数组选中的项变成字符串
+                  child: Text(
+                      'FilterChip: ${_selected.toString()}'), //将_selected数组选中的项变成字符串
                 ),
-              //  FilterChip -------------- 过滤碎片
+                //  FilterChip -------------- 过滤碎片
                 Wrap(
                   spacing: 8.0,
                   // _tags迭代处理数组中的元素，map()里放方法
@@ -149,8 +149,7 @@ class _ChipDemoState extends State<ChipDemo> {
                     return FilterChip(
                       label: Text(tag),
                       selected: _selected.contains(tag),
-                      onSelected: (value){
-
+                      onSelected: (value) {
                         setState(() {
                           if (_selected.contains(tag)) {
                             _selected.remove(tag);
@@ -163,7 +162,6 @@ class _ChipDemoState extends State<ChipDemo> {
                   }).toList(),
                 ),
 
-
                 Divider(
                   height: 25.0,
                   color: Colors.red,
@@ -174,7 +172,7 @@ class _ChipDemoState extends State<ChipDemo> {
                   width: double.infinity,
                   child: Text('FilterChip: $_choice'),
                 ),
-              //  ChoiceChip -------------- 选择碎片
+                //  ChoiceChip -------------- 选择碎片
                 Wrap(
                   spacing: 8.0,
                   // _tags迭代处理数组中的元素，map()里放方法
@@ -183,8 +181,7 @@ class _ChipDemoState extends State<ChipDemo> {
                       label: Text(tag),
                       selected: _choice == tag,
                       selectedColor: Colors.green,
-                      onSelected: (value){
-
+                      onSelected: (value) {
                         setState(() {
                           _choice = tag;
                         });
@@ -192,7 +189,6 @@ class _ChipDemoState extends State<ChipDemo> {
                     );
                   }).toList(),
                 )
-
               ],
             )
           ],

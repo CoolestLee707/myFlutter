@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class FloatingActionButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final Widget _floatingActionButton = FloatingActionButton(
       onPressed: () {},
       child: Icon(Icons.add),
@@ -30,7 +29,7 @@ class FloatingActionButtonDemo extends StatelessWidget {
 
       // 悬浮按钮
       // floatingActionButton: _floatingActionButton,
-       floatingActionButton: _floatingActionButtonExtended,
+      floatingActionButton: _floatingActionButtonExtended,
 
       // 设置悬浮位置
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

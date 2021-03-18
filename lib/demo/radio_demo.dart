@@ -6,7 +6,6 @@ class RadioDemo extends StatefulWidget {
 }
 
 class _RadioDemoState extends State<RadioDemo> {
-
   int _radioGroupA = 0;
   int _radioGroupB = 0;
 
@@ -16,11 +15,12 @@ class _RadioDemoState extends State<RadioDemo> {
     });
   }
 
-   void _handleRadioValueChangedB(int value) {
+  void _handleRadioValueChangedB(int value) {
     setState(() {
       _radioGroupB = value;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,32 +33,34 @@ class _RadioDemoState extends State<RadioDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             Text('RadioGroupValue:$_radioGroupB'),
-            SizedBox(height: 30.0,),
+            SizedBox(
+              height: 30.0,
+            ),
             RadioListTile(
               value: 0,
-              groupValue: _radioGroupB,//控制小圆圈为当前选择的
+              groupValue: _radioGroupB, //控制小圆圈为当前选择的
               onChanged: _handleRadioValueChangedB,
               title: Text('OpationA'),
               subtitle: Text('DescriptionA'),
               secondary: Icon(Icons.bookmark),
-              selected: _radioGroupB == 0,//设置图标文字是否是激活/置灰状态
+              selected: _radioGroupB == 0, //设置图标文字是否是激活/置灰状态
               activeColor: Colors.black,
             ),
-             RadioListTile(
+            RadioListTile(
               value: 1,
               groupValue: _radioGroupB,
-              onChanged: _handleRadioValueChangedB,//选中回调
+              onChanged: _handleRadioValueChangedB, //选中回调
               title: Text('OpationB'),
               subtitle: Text('DescriptionB'),
               secondary: Icon(Icons.bookmark),
               selected: _radioGroupB == 1,
-              activeColor: Colors.black,//选中的颜色
+              activeColor: Colors.black, //选中的颜色
             ),
-
             Text('RadioValue:$_radioGroupA'),
-            SizedBox(height: 30.0,),
+            SizedBox(
+              height: 30.0,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

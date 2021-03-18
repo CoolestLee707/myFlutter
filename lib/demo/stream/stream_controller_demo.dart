@@ -16,11 +16,11 @@ class StreamControllerDemo extends StatelessWidget {
 
 class StreamControllerDemoHome extends StatefulWidget {
   @override
-  _StreamControllerDemoHomeState createState() => _StreamControllerDemoHomeState();
+  _StreamControllerDemoHomeState createState() =>
+      _StreamControllerDemoHomeState();
 }
 
 class _StreamControllerDemoHomeState extends State<StreamControllerDemoHome> {
-
 // 1---StreamController
   StreamSubscription _streamControllerDemoSubscription;
   StreamController<String> _streamControllerDemo;
@@ -46,20 +46,20 @@ class _StreamControllerDemoHomeState extends State<StreamControllerDemoHome> {
     // _streamControllerDemo = StreamController<String>();
 
 // 创建可以多次订阅的 Broadcast Streams
-      _streamControllerDemo = StreamController.broadcast();
-
+    _streamControllerDemo = StreamController.broadcast();
 
 // sink
-   _sinkDemo = _streamControllerDemo.sink;
+    _sinkDemo = _streamControllerDemo.sink;
 
-    _streamControllerDemoSubscription = 
+    _streamControllerDemoSubscription =
 
-    //监听，以使用Stream中的数据，使用onData方法来处理数据，3秒后stream有值了执行onData
-    _streamControllerDemo.stream.listen(onData,onError: onError,onDone: onDone); 
-     
-     //又添加了一个监听
-    _streamControllerDemo.stream.listen(onDataTwo,onError: onError,onDone: onDone); 
+        //监听，以使用Stream中的数据，使用onData方法来处理数据，3秒后stream有值了执行onData
+        _streamControllerDemo.stream
+            .listen(onData, onError: onError, onDone: onDone);
 
+    //又添加了一个监听
+    _streamControllerDemo.stream
+        .listen(onDataTwo, onError: onError, onDone: onDone);
   }
 
 // 有数据---秒后data有值了执行这个方法
@@ -74,7 +74,6 @@ class _StreamControllerDemoHomeState extends State<StreamControllerDemoHome> {
   void onDataTwo(String data) {
     print('++++$data');
   }
-
 
 // 发生错误执行的方法
   void onError(Error) {
@@ -116,11 +115,9 @@ class _StreamControllerDemoHomeState extends State<StreamControllerDemoHome> {
     _streamControllerDemoSubscription.cancel();
   }
 
-
-  void _addDataToStream () async {
-
+  void _addDataToStream() async {
     print('add data to stream');
-    String data = await fetchData();//点击才执行fetchData方法
+    String data = await fetchData(); //点击才执行fetchData方法
     print('data is already');
 
 //StreamController控制stream
@@ -128,9 +125,7 @@ class _StreamControllerDemoHomeState extends State<StreamControllerDemoHome> {
 // 或
 // 使用 Sink 往 Stream 上添加数据
     _sinkDemo.add(data);
-    
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -140,14 +135,16 @@ class _StreamControllerDemoHomeState extends State<StreamControllerDemoHome> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('类似NSOperation多线程控制'),
-            SizedBox(height: 20.0,),
+            SizedBox(
+              height: 20.0,
+            ),
             // Text('$_data'),
 
 // StreamBuilder：根据 Stream 上的数据构建小部件,不需要setState,就可以动态构建刷新
             StreamBuilder(
               stream: _streamControllerDemo.stream,
-              initialData: '',//设置初始数据
-              builder: (context,snapshot) {
+              initialData: '', //设置初始数据
+              builder: (context, snapshot) {
                 return Text('${snapshot.data}');
               },
             ),

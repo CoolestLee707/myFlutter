@@ -20,7 +20,6 @@ class AnimationDemoHome extends StatefulWidget {
 
 class _AnimationDemoHomeState extends State<AnimationDemoHome>
     with TickerProviderStateMixin {
-      
   AnimationController animationDemoController;
 
 // 设置动画范围
@@ -98,7 +97,7 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
           //   },
           // ),
           AnimatedHeart(
-            animations: [animation,animationColor],
+            animations: [animation, animationColor],
             controller: animationDemoController,
           ),
           IconButton(
@@ -146,9 +145,7 @@ class AnimatedHeart extends AnimatedWidget {
       ),
       iconSize: animations[0].value,
       color: animations[1].value,
-
       onPressed: () {
-
         switch (controller.status) {
           case AnimationStatus.completed:
             controller.reverse(); //高到低

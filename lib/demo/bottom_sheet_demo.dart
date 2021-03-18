@@ -7,9 +7,7 @@ class BottomSheetDemo extends StatefulWidget {
 }
 
 class _BottomSheetDemoState extends State<BottomSheetDemo> {
-
   final _bottomSheetScaffoldKey = GlobalKey<ScaffoldState>();
-
 
 //底部弹出框
   _openBottomSheet() {
@@ -42,9 +40,8 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
   }
 
 // 对话框式底部滑动窗口
-  Future _openModalBottomSheet() async{
-
-   final option = await showModalBottomSheet(
+  Future _openModalBottomSheet() async {
+    final option = await showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
           return Container(
@@ -53,20 +50,20 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
               children: <Widget>[
                 ListTile(
                   title: Text('OptionA'),
-                  onTap: (){
-                    Navigator.pop(context,'A');
+                  onTap: () {
+                    Navigator.pop(context, 'A');
                   },
                 ),
                 ListTile(
                   title: Text('OptionB'),
-                  onTap: (){
-                    Navigator.pop(context,'B');
+                  onTap: () {
+                    Navigator.pop(context, 'B');
                   },
                 ),
                 ListTile(
                   title: Text('OptionC'),
-                  onTap: (){
-                    Navigator.pop(context,'C');
+                  onTap: () {
+                    Navigator.pop(context, 'C');
                   },
                 ),
               ],
@@ -74,13 +71,13 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
           );
         });
 
-      print(option);
+    print(option);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _bottomSheetScaffoldKey,//_openBottomSheet需要
+      key: _bottomSheetScaffoldKey, //_openBottomSheet需要
       appBar: AppBar(
         title: Text("BottomSheetDemo"),
         elevation: 0.0,

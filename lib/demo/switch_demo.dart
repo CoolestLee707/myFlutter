@@ -6,7 +6,6 @@ class SwitchDemo extends StatefulWidget {
 }
 
 class _SwitchDemoState extends State<SwitchDemo> {
-
   bool _switchItemA = false;
   bool _switchItemB = false;
 
@@ -25,10 +24,13 @@ class _SwitchDemoState extends State<SwitchDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(_switchItemA ? '😀' : '😢',style: TextStyle(fontSize: 35.0),),
+                Text(
+                  _switchItemA ? '😀' : '😢',
+                  style: TextStyle(fontSize: 35.0),
+                ),
                 Switch(
                   value: _switchItemA,
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
                       _switchItemA = value;
                     });
@@ -37,16 +39,16 @@ class _SwitchDemoState extends State<SwitchDemo> {
                 )
               ],
             ),
-
             SwitchListTile(
               value: _switchItemB,
               title: Text('SwitchItemB'),
               subtitle: Text('Description'),
               activeColor: Colors.red,
-              secondary: Icon(_switchItemB ? Icons.visibility : Icons.visibility_off),
-              onChanged: (value){
+              secondary:
+                  Icon(_switchItemB ? Icons.visibility : Icons.visibility_off),
+              onChanged: (value) {
                 setState(() {
-                   _switchItemB = value;
+                  _switchItemB = value;
                 });
               },
               selected: _switchItemB,

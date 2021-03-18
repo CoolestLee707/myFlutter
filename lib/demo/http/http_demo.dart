@@ -23,67 +23,62 @@ class HttpDemoHome extends StatefulWidget {
 }
 
 class _HttpDemoHomeState extends State<HttpDemoHome> {
-
   @override
   void initState() {
-
     super.initState();
 
     // dataExchange();
 
-
-      // fetchPosts();
-        // .then((value) => print(value));
-
-
+    // fetchPosts();
+    // .then((value) => print(value));
   }
 
-    // Model map json 转换
-    dataExchange () {
-        // map类型的数据
-      final post = {
-        'title': 'hello',
-        'description': 'ni hao beijing',
-      };
+  // Model map json 转换
+  dataExchange() {
+    // map类型的数据
+    final post = {
+      'title': 'hello',
+      'description': 'ni hao beijing',
+    };
 
-      print(post['title']);
-      print(post['description']);
+    print(post['title']);
+    print(post['description']);
 
-      // map转json,----发给后端
-      final postJson = json.encode(post);
-      print('json ---- ${postJson}');
+    // map转json,----发给后端
+    final postJson = json.encode(post);
+    print('json ---- ${postJson}');
 
-      // json转map，---解析数据
-      final postJsonConverted = json.decode(postJson);
-      print(postJsonConverted['title']);
-      print(postJsonConverted['description']);
-      print(postJsonConverted is Map);
+    // json转map，---解析数据
+    final postJsonConverted = json.decode(postJson);
+    print(postJsonConverted['title']);
+    print(postJsonConverted['description']);
+    print(postJsonConverted is Map);
 
-      // map转model,因为model用起来方便有提示
-      final postModel = Post.fromJson(postJsonConverted);
-      print('title: ${postModel.title},description: ${postModel.description}');
+    // map转model,因为model用起来方便有提示
+    final postModel = Post.fromJson(postJsonConverted);
+    print('title: ${postModel.title},description: ${postModel.description}');
 
-      // model直接转json，encode自动调用tojson方法
-      print('${json.encode(postModel)}');
-    }
+    // model直接转json，encode自动调用tojson方法
+    print('${json.encode(postModel)}');
+  }
 
-    Future<List<Post>> fetchPosts() async {
-      final response = await http.get('https://resources.ninghao.net/demo/posts.json');
+  Future<List<Post>> fetchPosts() async {
+    final response =
+        await http.get('https://resources.ninghao.net/demo/posts.json');
 
-      // print('-- ${response.statusCode}');
-      // print('-- ${response.body}');
+    // print('-- ${response.statusCode}');
+    // print('-- ${response.body}');
 
-      if (response.statusCode == 200) {
-        final responseBody = json.decode(response.body);//先转map,在把里面的字典转model
-        List<Post> posts = responseBody['posts']
+    if (response.statusCode == 200) {
+      final responseBody = json.decode(response.body); //先转map,在把里面的字典转model
+      List<Post> posts = responseBody['posts']
           .map<Post>((item) => Post.fromJson(item))
           .toList();
-          // print(posts);
-        return posts;
-      } else {
-        throw Exception('Failed');
-      }
-
+      // print(posts);
+      return posts;
+    } else {
+      throw Exception('Failed');
+    }
   }
 
   @override
@@ -98,24 +93,21 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
             child: Text('loading...'),
           );
         }
-         return ListView(
-            children: snapshot.data.map<Widget>((item) {
-              return ListTile(
-                title: Text(item.title),
-                subtitle: Text(item.author),
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(item.imageUrl),
-                ),
-              );
-            }).toList(),
-          );
+        return ListView(
+          children: snapshot.data.map<Widget>((item) {
+            return ListTile(
+              title: Text(item.title),
+              subtitle: Text(item.author),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(item.imageUrl),
+              ),
+            );
+          }).toList(),
+        );
       },
     );
   }
 }
-
-
-
 
 // json --> Map - Model
 
@@ -138,19 +130,18 @@ class Post {
 
 // map -> model:   转换对应关系
   Post.fromJson(Map json)
-    : id = json['id'],
-      title = json['title'],
-      author = json['author'],
-      description = json['description'],
-      imageUrl = json['imageUrl'];
+      : id = json['id'],
+        title = json['title'],
+        author = json['author'],
+        description = json['description'],
+        imageUrl = json['imageUrl'];
 
-
-// model -> map 
+// model -> map
   Map toJson() => {
-    'id': id,
-    'title': title,
-    'author': author,
-    'description': description,
-    'imageUrl': imageUrl,
-  };
+        'id': id,
+        'title': title,
+        'author': author,
+        'description': description,
+        'imageUrl': imageUrl,
+      };
 }

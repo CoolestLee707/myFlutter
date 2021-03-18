@@ -7,8 +7,8 @@ class DataTableDemo extends StatefulWidget {
 }
 
 class _DataTableDemoState extends State<DataTableDemo> {
-  int _sortColumnIndex = 0;//排序第几个
-  bool _sortAscending = true;//是否升序
+  int _sortColumnIndex = 0; //排序第几个
+  bool _sortAscending = true; //是否升序
 
   @override
   Widget build(BuildContext context) {
@@ -22,24 +22,22 @@ class _DataTableDemoState extends State<DataTableDemo> {
         child: ListView(
           children: <Widget>[
             DataTable(
-
               //排序，会出现箭头,默认升序
               sortColumnIndex: _sortColumnIndex,
-              sortAscending: _sortAscending,//true升序↓，false降序↑
+              sortAscending: _sortAscending, //true升序↓，false降序↑
               //表头标题
               columns: [
                 DataColumn(
                   label: Text('title'),
 
                   //点击表头会调用的方法
-                  onSort: (int index,bool ascending){
-
+                  onSort: (int index, bool ascending) {
                     // ascending表示是否使用升序排列，与当前相反
                     setState(() {
                       _sortColumnIndex = index;
                       _sortAscending = ascending;
 
-                      posts.sort((a,b){
+                      posts.sort((a, b) {
                         if (!ascending) {
                           // 降序排列
                           final c = a;
@@ -54,17 +52,15 @@ class _DataTableDemoState extends State<DataTableDemo> {
                   // 自定义宽度
                   // label: Container(
                   //   width: 150.0,
-                  //   child: Text('title'), 
+                  //   child: Text('title'),
                   // )
                 ),
                 DataColumn(
                   label: Text('auther'),
                 ),
-
                 DataColumn(
                   label: Text('Image'),
                 ),
-                
               ],
               // 内容---要和标题数量一致
               //-------手动设置数据
@@ -86,9 +82,9 @@ class _DataTableDemoState extends State<DataTableDemo> {
               // ],
 
               // ----model数据设置
-              rows: posts.map((post){
+              rows: posts.map((post) {
                 return DataRow(
-                  selected: post.selected,//是否选中
+                  selected: post.selected, //是否选中
                   onSelectChanged: (bool value) {
                     // value点击将要变得值
                     setState(() {
@@ -98,14 +94,12 @@ class _DataTableDemoState extends State<DataTableDemo> {
                     });
                   },
                   cells: [
-                    DataCell(Text(post.title)), 
+                    DataCell(Text(post.title)),
                     DataCell(Text(post.auther)),
                     DataCell(Image.network(post.imageUrl)),
-
                   ],
                 );
               }).toList(),
-
             ),
           ],
         ),

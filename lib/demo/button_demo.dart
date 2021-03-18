@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class ButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
 // 定义FlatButton，Create a simple text button.
     final Widget flatButtonDemo = Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -277,12 +276,11 @@ class ButtonDemo extends StatelessWidget {
 
             //占满父控件的主轴方向
             expandedButtonDemo,
-            
+
             //中间有间隔
             buttonBarDemo,
 
             //按钮------------------
-
           ],
         ),
       ),

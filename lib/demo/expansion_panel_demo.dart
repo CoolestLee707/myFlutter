@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 //相当于模型了
 class ExpansionPaneItem {
   final String headerText;
@@ -31,7 +30,6 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
   void initState() {
     super.initState();
     _expansionPanelItems = <ExpansionPaneItem>[
-
       ExpansionPaneItem(
         headerText: 'Pabel A',
         body: Container(
@@ -41,7 +39,6 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
         ),
         isExpanded: false,
       ),
-
       ExpansionPaneItem(
         headerText: 'Pabel B',
         body: Container(
@@ -51,7 +48,6 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
         ),
         isExpanded: false,
       ),
-
       ExpansionPaneItem(
         headerText: 'Pabel C',
         body: Container(
@@ -61,7 +57,6 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
         ),
         isExpanded: false,
       ),
-
     ];
   }
 
@@ -77,7 +72,6 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             ExpansionPanelList(
               //点击箭头会触发的方法
               expansionCallback: (int panelIndex, bool ixExpanded) {
@@ -90,24 +84,22 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
 
               // 列表通过循环_expansionPanelItems数组来创建ExpansionPanel数组
               // 遍历ExpansionPaneItem类型的数组生成ExpansionPanel类型的三个数组
-              children: _expansionPanelItems.map(
-                (ExpansionPaneItem item) {
-                  return ExpansionPanel(
-                    isExpanded: item.isExpanded,
-                    body: item.body,
-                    headerBuilder: (BuildContext context, bool isExpanded) {
-                      return Container(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          item.headerText,
-                          textAlign: TextAlign.start,
-                          style: Theme.of(context).textTheme.title,
-                        ),
-                      );
-                    },
-                  );
-                }
-              ).toList(),
+              children: _expansionPanelItems.map((ExpansionPaneItem item) {
+                return ExpansionPanel(
+                  isExpanded: item.isExpanded,
+                  body: item.body,
+                  headerBuilder: (BuildContext context, bool isExpanded) {
+                    return Container(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        item.headerText,
+                        textAlign: TextAlign.start,
+                        style: Theme.of(context).textTheme.title,
+                      ),
+                    );
+                  },
+                );
+              }).toList(),
             ),
           ],
         ),
@@ -116,41 +108,36 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
   }
 }
 
+//  ExpansionPanel(
+//                 //收缩时只展示的
+//                 headerBuilder: (BuildContext context, bool isExpanded) {
+//                   if (isExpanded) {
+//                     return Container(
+//                       padding: EdgeInsets.all(16.0),
+//                       child: Text(
+//                         'Panel A 展开',
+//                         textAlign: TextAlign.start,
+//                         style: Theme.of(context).textTheme.title,
+//                       ),
+//                     );
+//                   } else {
+//                     return Container(
+//                       padding: EdgeInsets.all(16.0),
+//                       child: Text(
+//                         'Panel A 收起',
+//                         textAlign: TextAlign.start,
+//                         style: Theme.of(context).textTheme.title,
+//                       ),
+//                     );
+//                   }
+//                 },
 
+//                 //body展开的内容
+//                 body: Container(
+//                   padding: EdgeInsets.all(16.0),
+//                   width: double.infinity,
+//                   child: Text('Content for Panel A'),
+//                 ),
 
-
-
-
-  //  ExpansionPanel(
-  //                 //收缩时只展示的
-  //                 headerBuilder: (BuildContext context, bool isExpanded) {
-  //                   if (isExpanded) {
-  //                     return Container(
-  //                       padding: EdgeInsets.all(16.0),
-  //                       child: Text(
-  //                         'Panel A 展开',
-  //                         textAlign: TextAlign.start,
-  //                         style: Theme.of(context).textTheme.title,
-  //                       ),
-  //                     );
-  //                   } else {
-  //                     return Container(
-  //                       padding: EdgeInsets.all(16.0),
-  //                       child: Text(
-  //                         'Panel A 收起',
-  //                         textAlign: TextAlign.start,
-  //                         style: Theme.of(context).textTheme.title,
-  //                       ),
-  //                     );
-  //                   }
-  //                 },
-
-  //                 //body展开的内容
-  //                 body: Container(
-  //                   padding: EdgeInsets.all(16.0),
-  //                   width: double.infinity,
-  //                   child: Text('Content for Panel A'),
-  //                 ),
-
-  //                 isExpanded: _isExpanded,
-  //               ),
+//                 isExpanded: _isExpanded,
+//               ),

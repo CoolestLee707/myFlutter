@@ -24,15 +24,25 @@ class PostShow extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(32.0),
               color: Colors.red[50],
-              width: double.infinity,//容器占满所有宽度
+              width: double.infinity, //容器占满所有宽度
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('${post.title}',style: Theme.of(context).textTheme.title,),
-                  Text('${post.auther}',style: Theme.of(context).textTheme.subhead,),
-                  SizedBox(height: 32.0,),
-                  Text('${post.description}',style: Theme.of(context).textTheme.body1,),
-
+                  Text(
+                    '${post.title}',
+                    style: Theme.of(context).textTheme.title,
+                  ),
+                  Text(
+                    '${post.auther}',
+                    style: Theme.of(context).textTheme.subhead,
+                  ),
+                  SizedBox(
+                    height: 32.0,
+                  ),
+                  Text(
+                    '${post.description}',
+                    style: Theme.of(context).textTheme.body1,
+                  ),
                 ],
               ),
             ),

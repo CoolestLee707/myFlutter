@@ -8,31 +8,27 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          
           //设置标题栏（类似导航栏）
           SliverAppBar(
             // title: Text(
             //   'flutterdemo'
             // ),
-            pinned: true,//固定标题栏
-            floating: true,//导航栏上滑消失，下拉马上出现
+            pinned: true, //固定标题栏
+            floating: true, //导航栏上滑消失，下拉马上出现
 
-            expandedHeight: 300.0,//下拉伸缩空间
+            expandedHeight: 300.0, //下拉伸缩空间
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                'I Like Flutter',
-                style : TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.red,
-                  letterSpacing: 5.0,//字间距
-                )
-              ),
+              title: Text('I Like Flutter',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    color: Colors.red,
+                    letterSpacing: 5.0, //字间距
+                  )),
               background: Image.network(
                 'https://b-ssl.duitang.com/uploads/item/201701/21/20170121092211_EdcvV.jpeg',
                 fit: BoxFit.cover,
               ),
             ),
-
           ),
 
           SliverGridDemo(),
@@ -56,8 +52,6 @@ class SliverDemo extends StatelessWidget {
           //     // sliver: SliverListDemo(),
           //   ),
           // ),
-
-
         ],
       ),
     );
@@ -98,7 +92,8 @@ class SliverListDemo extends StatelessWidget {
         (BuildContext context, int index) {
           return Padding(
             padding: EdgeInsets.only(bottom: 15.0),
-            child: ClipRRect(//裁剪出圆角
+            child: ClipRRect(
+              //裁剪出圆角
               borderRadius: BorderRadius.circular(15.0),
               // elevation: 14.0,
               // shadowColor: Colors.grey.withOpacity(0.5),
@@ -128,7 +123,6 @@ class SliverListDemo extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-
                   Positioned(
                     left: 20.0,
                     top: 20.0,

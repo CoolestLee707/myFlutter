@@ -23,22 +23,18 @@ class RxDartDemoHome extends StatefulWidget {
 }
 
 class _RxDartDemoHomeState extends State<RxDartDemoHome> {
-
 // Observables使用
   @override
   void initState() {
     super.initState();
-    
 
-    Observable<String> _observable = 
-        Observable(Stream.fromIterable(['hello','flutter','coolest']));
+    Observable<String> _observable =
+        Observable(Stream.fromIterable(['hello', 'flutter', 'coolest']));
     _observable.listen(print);
-
   }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
